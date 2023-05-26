@@ -1,4 +1,4 @@
-# I created this cheatsheet for self reference for using docker on Linux.
+# I created this cheatsheet for self-reference for using docker on Linux.
 
 sudo dockerd
 # first command to run on Linux before any of the following docker commands - to start docker deamon.
