@@ -14,7 +14,7 @@ sudo docker image ls
 # list docker images
 
 sudo docker run -p 3000:3000 -ti -v /home/rsrajput/src/dockerdata/rails_proj:/home/src/rails_proj <image_id> /bin/bash
-# final perfect docker command with ports exposed, volume defined in local_path:container_path format, with image_id or image name. It implicitly creates volume and mount it due to -v.
+# final perfect docker command with ports exposed, volume defined in local_path:container_path format, with image_id or image name. It implicitly creates volume and mount it due to -v flag.
 
 sudo docker volume ls
 # list docker volumes in local machine.
@@ -32,4 +32,4 @@ sudo docker stop <container_id>
 # stop the container before removing it.
 
 # To-do
-# How to restart stopped/exited container.
+# How to restart stopped/exited container while ensuring that the image launches with bash as it happens with image launced with -ti flags.
