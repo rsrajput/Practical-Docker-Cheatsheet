@@ -1,0 +1,35 @@
+# I created this cheatsheet for self reference while using docker on Linux.
+
+sudo dockerd
+# first command to run on Linux before any of the following docker commands - to start docker deamon.
+
+sudo docker pull ubuntu
+# pull a fresh image. "sudo docker run <image> will pull the image first if it is not already downloaded.
+
+sudo docker build -t <image_name> .
+# builds docker image with name rails7 using dockerfile in current folder (.)
+
+sudo docker images
+sudo docker image ls
+# list docker images
+
+sudo docker run -p 3000:3000 -ti -v /home/rsrajput/src/dockerdata/rails_proj:/home/src/rails_proj <image_id> /bin/bash
+# final perfect docker command with ports exposed, volume defined in local_path:container_path format, with image_id or image name. It implicitly creates volume and mount it due to -v.
+
+sudo docker volume ls
+# list docker volumes in local machine.
+
+sudo docker ps -a
+# list all docker containers, including stopped ones.
+
+sudo docker commit <container_id> <image_name>
+# create an image using existing container. To be used if some system level changes have been made in container, i.e. something installed or uninstalled. Data changes are already sync by docker volumes to local machine.
+
+sudo docker rm <container_id 1> <container_id 2> <container_id 3>
+# remove stopped containers, as you already have image using which you can again launch the container, Data is already in sync in docker volume in local machine.
+
+sudo docker stop <container_id>
+# stop the container before removing it.
+
+# To-do
+# How to restart stopped/exited container.
