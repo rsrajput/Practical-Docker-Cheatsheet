@@ -31,5 +31,11 @@ sudo docker rm <container_id 1> <container_id 2> <container_id 3>
 sudo docker stop <container_id>
 # stop the container before removing it.
 
-# To-do
+
 # How to restart stopped/exited container while ensuring that the image launches with bash as it happens with image launced with -ti flags.
+
+sudo docker start <container_id>
+# 1. first start the stopped/exited container
+
+sudo docker exec -it <container_id> /bin/bash
+# 2. (after starting the stopped/exited container with the above command), run it in interactive mode
